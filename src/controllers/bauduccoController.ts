@@ -1,5 +1,5 @@
 import { Request, Response } from "express"; // espaço antes de Request por Identação
-import { Produto, getAllProduto, addProduto } from "../models/bauduccoModels";
+import { Produto, getAllProduto, addProduto, deleteProduto } from "../models/bauduccoModels";
 
 export function addProdutoController(request: Request, response: Response): void{
     const novoProduto: Produto = request.body;

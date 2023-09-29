@@ -1,12 +1,15 @@
 import express from "express";
-import { addProdutoController, getAllProdutoController, listarSaboresDeBiscoitos } from "../controllers/bauduccoController";
+import { addProdutoController, deleteProdutoController, getAllProdutoController, listarSaboresDeBiscoitos } 
+
+from "../controllers/bauduccoController";
 
 const router = express.Router();
 
 router.get('/', getAllProdutoController);
 router.post('/', addProdutoController);
 router.get('/', listarSaboresDeBiscoitos);
-router.delete('/', deleteProdutoController);
+router.delete('/:id', deleteProdutoController);
+router.put('/:id',updateProdutoController);
 
 export default router;
 
