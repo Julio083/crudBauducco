@@ -13,7 +13,7 @@ const biscoitos: Biscoito[] = [
 
 export const atualizarBiscoito = (req: Request, res: Response) => {
   const id = parseInt(req.params.id);
-  const novoPreco = req.body.preco; // Supondo que o novo preço seja fornecido no corpo da requisição
+  const novoPreco = req.body.preco; 
 
   const biscoitoIndex = biscoitos.findIndex((b) => b.id === id);
 
@@ -21,7 +21,6 @@ export const atualizarBiscoito = (req: Request, res: Response) => {
     return res.status(404).json({ message: 'Biscoito não encontrado' });
   }
 
-  // Atualize o preço do biscoito
   biscoitos[biscoitoIndex].preco = novoPreco;
 
   res.json({ message: 'Preço do biscoito atualizado com sucesso' });
